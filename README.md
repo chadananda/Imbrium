@@ -20,10 +20,10 @@ This can probably be overcome by splitting the search index into small pieces bu
 ### 2. Search Objects 
 
 - Override Lunr.js search to accept detailed search object
-- Provide registered function for fetching text by id then index array of ids
+- Optional function for fetching text sections/documents by id 
   - Same function and id can then be used for secondary search/display
-- Provide function for determining (or even providing) trie index to use for each word
-- Provide function for providing secondary search analysis on each hit 
+- Optional function for determining (or even providing) trie index to use for each word
+- Optional function for providing secondary search analysis on each hit 
 - Provide split up search phrase supporting more advanced syntax such as:
     - exclude flag __-word__
     - metadata search __(authorname, booktitle, subject)__
@@ -39,7 +39,7 @@ This can probably be overcome by splitting the search index into small pieces bu
 
 - Advanced secondary search quality scoring
 - Use registered function for fetching text block from id
-  - Should work with plain text or HTML
+  - Should work with pext or HTML
   - Receives search object with full, stemmed and metaphone data
 - Locate matching terms in text block (by metaphone if used)
   - Return terms, position, metaphone, length etc. (all information needed for markup and display)
