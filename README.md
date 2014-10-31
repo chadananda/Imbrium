@@ -65,3 +65,28 @@ This can probably be overcome by splitting the search index into small pieces bu
 - Launch open project to create Metaphone implementations in all major languages. Sponsor development.
 
 
+-------------------------------------------------------
+
+# Development Plan
+
+* Create test page to load and parse books into local storage (both disk and IndexDB)
+  * Pull down Gutenberg books, strip out header and footer, split by paragraph
+  * Spider pages from Wikipedia (slowly), split by blocks 
+  * For file storage, store manifest document and block documents (by base 36 id) as docid-blockid
+* Provide indexing and search for both Lunr.js and Imbrium.js, log time and memory usage
+* Implement trie replacement 
+  * Create pull request for Lunr.js
+* Implement search object with 
+  * hooks for index lookup, textblock lookup, secondary analysis
+  * language selection
+* Implement dual-metaphone
+  * Create pull request for dual-metaphone   
+* Implement textblock lookup
+* Implement secondary analysis
+* Implement index sharding by first two letters 
+
+ 
+    
+
+
+
